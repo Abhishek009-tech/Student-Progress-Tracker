@@ -1,0 +1,28 @@
+// 📁 src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+// import Auth from "./Auth";
+import Dashboard from "./Dashboard";
+// import Page2 from "./Page2";
+// import Quiz from "./Quiz";
+// import Score from "./Score";
+// import Navbar from "./Navbar";
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Auth />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/page2" element={<Page2 />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/score" element={<Score />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
